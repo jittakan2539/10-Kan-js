@@ -1,4 +1,4 @@
-//Feature 1: Add unput to product
+//Feature 1: Add input to product
 
 //declare a starting value to store data.
 let products = [];
@@ -44,6 +44,16 @@ document
 		const image = document.getElementById("image").value;
 		const errorMessage = document.getElementById("errorMessage");
 
+		// Validation for empty inputs
+		if (
+			productName.trim() === "" ||
+			price.trim() === "" ||
+			image.trim() === ""
+		) {
+			errorMessage.textContent = "Please fill in all fields.";
+			return;
+		}
+
 		//validation if uploaded image is jpg/png/gif
 		if (!isImgUrl(image)) {
 			errorMessage.textContent = "Please enter a valid image URL.";
@@ -77,6 +87,11 @@ document
 		//Clear all documents in the form
 		document.getElementById("form").reset();
 	});
+
+//Event when clicking 'Reset' button
+document.getElementById("bt-reset").addEventListener("click", function (event) {
+	location.reload();
+});
 
 //Feature 2: Add ticked items to cart.
 
@@ -150,7 +165,7 @@ function displayCart(cart) {
 function displayButton() {
 	const btnCal = document.getElementById("btn-cal");
 	btnCal.className =
-		"border border-black bg-gray-200 text-black font-medium px-8 py-2 rounded-md hover:bg-blue-600 hover:ring hover:ring-blue-300";
+		"border border-black bg-green-200 text-black font-medium px-8 py-2 rounded-md hover:bg-blue-600 hover:ring hover:ring-blue-300";
 	if (cart.length === 0) {
 		alert("You haven't added any items to cart.");
 		return;
