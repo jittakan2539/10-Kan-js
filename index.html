@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shopping Cart</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="bg-gray-200 p-6">
+		<form id="form" class="font-normal bg-blue-200 max-w-5xl max-w-fit mx-auto">
+			<h1 class="font-bold text-3xl text-center mb-5">Shopping cart</h1>
+			<h2 class="font-bold text-2xl text-left pb-2">Add Item for selection</h2>
+
+			<div id="inputArea" class="flex gap-3 justify-left">
+				<label for="productName" class="block text-gray-700 font-medium mb-2"
+					>Product Name:</label
+				>
+				<input
+					type="text"
+					name="productName"
+					id="productName"
+					required
+					class="px-3 py-1 border border-gray-500 rounded-md"
+					minlength="3"
+					maxlength="30"
+				/>
+
+				<label for="price" class="block text-gray-700 font-medium mb-2 pr-2"
+					>Price:</label
+				>
+				<input
+					type="number"
+					name="price"
+					id="price"
+					required
+					class="px-3 py-1 border border-gray-500 rounded-md"
+				/>
+
+				<label for="image" class="block text-gray-700 font-medium mb-2 pr-2"
+					>Image:</label
+				>
+				<input
+					type="url"
+					name="image"
+					id="image"
+					required
+					class="px-3 py-1 border border-gray-500 rounded-md"
+				/>
+
+				<button
+					id="bt-product"
+					type="submit"
+					class="border border-black bg-gray-200 text-black font-medium px-8 py-2 rounded-md hover:bg-blue-600 hover:ring hover:ring-blue-300"
+				>
+					Create Product
+				</button>
+			</div>
+			<p id="errorMessage" class="text-xl mt-3 text-red-500 text-center"></p>
+		</form>
+
+		<section
+			id="displaySection"
+			class="mt-6 max-w-md mx-auto space-y-4"
+		></section>
+
+		<button
+			type="submit"
+			class="border border-black bg-gray-200 text-black font-medium px-8 py-2 rounded-md hover:bg-blue-600 hover:ring hover:ring-blue-300"
+		>
+			Add to Cart
+		</button>
+
+		<script src="./script.js"></script>
+	</body>
+</html>
